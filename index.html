@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title></title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #05060a; color: #cfd6e4; font-family: -apple-system, "Helvetica Neue", sans-serif; }
+  #app { position: fixed; inset: 0; }
+  #overlay {
+    position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px; background: #05060a; z-index: 10; transition: opacity .6s;
+  }
+  #overlay .spinner {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 3px solid rgba(120,160,255,.2); border-top-color: #6ea0ff; animation: spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #overlay small { color: #7a869e; }
+  #hud {
+    position: fixed; left: 16px; bottom: 14px; z-index: 5; font-size: 12px; line-height: 1.6;
+    color: #8b97b0; user-select: none; pointer-events: none;
+  }
+  #hud b { color: #cfd6e4; font-weight: 600; }
+  #err { max-width: 520px; text-align: center; color: #ff9a9a; line-height: 1.6; padding: 0 24px; }
+  button {
+    pointer-events: auto; background: rgba(110,160,255,.12); border: 1px solid rgba(110,160,255,.35);
+    color: #cfd6e4; padding: 7px 14px; border-radius: 8px; font-size: 12px; cursor: pointer; margin-right: 8px;
+  }
+  button:hover { background: rgba(110,160,255,.22); }
+  #controls { position: fixed; right: 16px; bottom: 14px; z-index: 5; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="hud">
+  <div><b>Particle Assembly</b> — WebGPU</div>
+  <div>ドラッグ:回転 / ホイール:ズーム</div>
+  <div id="phase">読み込み中…</div>
+</div>
+<div id="controls">
+  <button id="replay">▶ 再生</button>
+</div>
+<div id="overlay">
+  <div class="spinner"></div>
+  <small id="loadmsg">モデルを読み込み中…</small>
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
