@@ -9,7 +9,7 @@ import {
   Fn, instanceIndex, vertexIndex, If, mx_noise_vec3
 } from 'three/tsl';
 
-const PARTICLE_COUNT = 120000;   // GPU常駐パーティクル（コンピュートで更新）
+const PARTICLE_COUNT = 12000;   // GPU常駐パーティクル（コンピュートで更新）
 const MODEL_URL = `/sample.glb`;
 
 const overlay  = document.getElementById('overlay');
