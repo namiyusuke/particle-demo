@@ -123,7 +123,7 @@ try {
   controls.update();
 
   uReveal.value = 1;              // メッシュは常時表示
-  phaseEl.textContent = 'WebGPU Compute · なぞってモデルを崩す';
+  phaseEl.textContent = '';
 
   // 「リセット」ボタン：剥離した粒を全て元に戻す
   const replayBtn = document.getElementById('replay');
